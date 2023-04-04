@@ -15,6 +15,10 @@ variable "yandex_token" {
   type        = string
   sensitive   = true
 }
+variable "app-vm-user" {
+  description = "App VM user"
+  type        = string
+}
 variable "app-vm-1_public_ip" {
   description = "Public IP for APP 1 instance"
   type        = string
@@ -36,4 +40,8 @@ variable "db_password" {
   description = "Data base user passowrd"
   type        = string
   sensitive   = true
+}
+variable "db_name" {
+  description = "Data base name"
+  type        = string
 }

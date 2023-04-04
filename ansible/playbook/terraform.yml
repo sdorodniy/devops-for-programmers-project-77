@@ -17,10 +17,12 @@
           -var 'yandex_cloud_id={{ yandex_cloud_id }}' \
           -var 'yandex_folder_id={{ yandex_folder_id }}' \
           -var 'yandex_zone={{ yandex_zone }}' \
+          -var 'app-vm-user={{ vm_user }}' \
           -var 'ssh_key={{ lookup('ansible.builtin.file', '~/.ssh/id_rsa.pub') }}'
           -var 'app-vm-1_public_ip={{ hostvars.app1.ansible_host }}' \
           -var 'app-vm-2_public_ip={{ hostvars.app2.ansible_host }}' \
           -var 'db_user={{ redmine_db_username }}' \
+          -var 'db_name={{ redmibe_db_database }}' \
           -var 'db_password={{ redmine_db_password }}'"
       register: plan
       ignore_errors: yes
@@ -38,10 +40,12 @@
           -var 'yandex_cloud_id={{ yandex_cloud_id }}' \
           -var 'yandex_folder_id={{ yandex_folder_id }}' \
           -var 'yandex_zone={{ yandex_zone }}' \
+          -var 'app-vm-user={{ vm_user }}' \
           -var 'ssh_key={{ lookup('ansible.builtin.file', '~/.ssh/id_rsa.pub') }}'
           -var 'app-vm-1_public_ip={{ hostvars.app1.ansible_host }}' \
           -var 'app-vm-2_public_ip={{ hostvars.app2.ansible_host }}' \
           -var 'db_user={{ redmine_db_username }}' \
+          -var 'db_name={{ redmibe_db_database }}' \
           -var 'db_password={{ redmine_db_password }}'"
       register: apply
       ignore_errors: yes

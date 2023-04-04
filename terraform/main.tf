@@ -16,6 +16,7 @@ resource "yandex_compute_instance" "app-vm-1" {
   boot_disk {
     initialize_params {
       image_id = "fd8emvfmfoaordspe1jr"
+      size     = 15
     }
   }
 
@@ -27,7 +28,7 @@ resource "yandex_compute_instance" "app-vm-1" {
   }
 
   metadata = {
-    ssh-keys = "ubuntu:${var.ssh_key}"
+    ssh-keys = "${var.app-vm-user}:${var.ssh_key}"
   }
 }
 
@@ -49,6 +50,7 @@ resource "yandex_compute_instance" "app-vm-2" {
   boot_disk {
     initialize_params {
       image_id = "fd8emvfmfoaordspe1jr"
+      size     = 15
     }
   }
 
@@ -60,7 +62,7 @@ resource "yandex_compute_instance" "app-vm-2" {
   }
 
   metadata = {
-    ssh-keys = "ubuntu:${var.ssh_key}"
+    ssh-keys = "${var.app-vm-user}:${var.ssh_key}"
   }
 }
 
@@ -151,7 +153,7 @@ resource "yandex_mdb_mysql_cluster" "db-cluster" {
   
   resource "yandex_mdb_mysql_database" "db" {
     cluster_id = yandex_mdb_mysql_cluster.db-cluster.id
-    name       = "db"
+    name       = var.db_name
   }
   
   resource "yandex_mdb_mysql_user" "db-user" {

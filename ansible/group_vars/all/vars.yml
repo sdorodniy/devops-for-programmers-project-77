@@ -1,2 +1,6 @@
+vm_user: ubuntu
 redmine_db_username: user
 redmine_db_password: "{{ vault_redmine_db_password }}"
+redmibe_db_database: db
+redmine_db_host: rc1b-ublf5xdxjg2r9bnf.mdb.yandexcloud.net
+redmibe_db_port: 3306

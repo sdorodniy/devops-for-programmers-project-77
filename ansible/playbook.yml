@@ -1,0 +1,24 @@
+- hosts: webservers
+  become: yes
+  tasks:
+    - name: Create redmine config directory
+      ansible.builtin.file:
+        path: /etc/redmine
+        state: directory
+        mode: '0755'
+    - name: Create .env file
+      ansible.builtin.template:
+        src: templates/env.j2
+        dest: /etc/redmine/.env
+        mode: '0644'
+    - name: Create a network
+      community.docker.docker_network:
+        name: app_network
+    - name: Start redmine docker image
+      community.docker.docker_container:
+        name: redmine
+        image: redmine:5.0
+        env_file: /etc/redmine/.env
+        restart_policy: always
+        networks:
+          - name: app_network

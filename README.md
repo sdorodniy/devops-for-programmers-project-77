@@ -34,6 +34,21 @@ make plan
 meke apply
 ```
 
+### App servers
+
+* ping
+```bash
+make ping
+```
+* prepare servers
+```bash
+make prepare
+```
+* deploy application
+```bash
+make deploy
+```
+
 ### Ansible
 
 * Edit vault:

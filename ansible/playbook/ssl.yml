@@ -1,0 +1,39 @@
+- hosts: webservers
+  become: yes
+  tasks:
+    - name: Create Nginx config directory
+      ansible.builtin.file:
+        path: /etc/redmine/nginx
+        state: directory
+        mode: '0755'
+    - name: Copy Nginx config
+      ansible.builtin.copy:
+        src: ../containers/nginx/default.conf
+        dest: /etc/redmine/nginx/default.conf
+        mode: '0644'
+    - name: Create SSL directory
+      ansible.builtin.file:
+        path: /etc/redmine/ssl
+        state: directory
+        mode: '0755'
+    - name: Copy SSL certificates
+      ansible.builtin.copy:
+        src: "../ssl/{{ item }}"
+        dest: "/etc/redmine/ssl/{{ item }}"
+        mode: '0644'
+      loop:
+        - fullchain.pem
+        - privkey.pem
+    - name: Run Nginx
+      community.docker.docker_container:
+        name: nginx
+        image: nginx:latest
+        ports:
+          - 80:80
+          - 443:443
+        restart_policy: always
+        networks:
+          - name: app_network
+        volumes:
+          - /etc/redmine/nginx/default.conf:/etc/nginx/conf.d/default.conf
+          - /etc/redmine/ssl/:/ssl/certs
