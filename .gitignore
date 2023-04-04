@@ -3,7 +3,7 @@ terraform/.terraform/
 terraform/.terraform.lock.hcl
 terraform/terraform.tfstate
 terraform/*.backup
-terraform/token.txt
+terraform/vars.auto.tfvars
 
 # Ansible
 ansible/vault-password
