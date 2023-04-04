@@ -1,0 +1,12 @@
+# Terraform
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+terraform/terraform.tfstate
+terraform/*.backup
+terraform/token.txt
+
+# Ansible
+ansible/vault-password
+
+# Other
+.DS_Store
