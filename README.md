@@ -53,19 +53,19 @@ make deploy
 
 * Edit vault:
 ```bash
-vault_edit_all
-vault_edit_local
-vault_edit_webservers
+make vault_edit_all
+make vault_edit_local
+make vault_edit_webservers
 ```
 * Decrypt vault:
 ```bash
-vault_decrypt_all
-vault_decrypt_local
-vault_decrypt_webservers
+make vault_decrypt_all
+make vault_decrypt_local
+make vault_decrypt_webservers
 ```
 * Encrypt vault:
 ```bash
-vault_encrypt_all
-vault_encrypt_local
-vault_encrypt_webservers
+make vault_encrypt_all
+make vault_encrypt_local
+make vault_encrypt_webservers
 ```
