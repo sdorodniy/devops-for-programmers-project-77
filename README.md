@@ -44,7 +44,7 @@ vault_edit_webservers
 ```
 * Decrypt vault:
 ```bash
-vault_edit_local
+vault_decrypt_all
 vault_decrypt_local
 vault_decrypt_webservers
 ```
