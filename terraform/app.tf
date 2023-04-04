@@ -1,12 +1,12 @@
 resource "yandex_compute_instance" "app-vm-1" {
-  name = "app-vm-1"
+  name        = "app-vm-1"
   platform_id = "standard-v1"
 
   resources {
     core_fraction = 20
-    cores  = 2
-    memory = 1
-    gpus   = 0
+    cores         = 2
+    memory        = 1
+    gpus          = 0
   }
 
   scheduling_policy {
@@ -33,14 +33,14 @@ resource "yandex_compute_instance" "app-vm-1" {
 }
 
 resource "yandex_compute_instance" "app-vm-2" {
-  name = "app-vm-2"
+  name        = "app-vm-2"
   platform_id = "standard-v1"
 
   resources {
     core_fraction = 20
-    cores  = 2
-    memory = 1
-    gpus   = 0
+    cores         = 2
+    memory        = 1
+    gpus          = 0
   }
 
   scheduling_policy {
