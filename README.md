@@ -1,6 +1,8 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/sdorodniy/devops-for-programmers-project-77/workflows/hexlet-check/badge.svg)](https://github.com/sdorodniy/devops-for-programmers-project-77/actions)
 
+Site: [sdorodniy.site](https://sdorodniy.site/)
+
 ## Prerequisites
 
 * [Make](https://www.gnu.org/software/make/manual/make.html)
