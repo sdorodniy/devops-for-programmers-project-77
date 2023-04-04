@@ -23,8 +23,8 @@ prepare:
 	ansible-playbook ansible/playbook/prepare.yml -i ansible/inventory.ini --vault-password-file ansible/vault-password
 
 deploy:
-	ansible-playbook ansible/playbook.yml -i ansible/inventory.ini --vault-password-file ansible/vault-password
 	ansible-playbook ansible/playbook/ssl.yml -i ansible/inventory.ini --vault-password-file ansible/vault-password
+	ansible-playbook ansible/playbook.yml -i ansible/inventory.ini --vault-password-file ansible/vault-password
 
 vault_generate_password_file:
 ifneq ($(wildcard ansible/vault-password),)

@@ -23,7 +23,10 @@
           -var 'app-vm-2_public_ip={{ hostvars.app2.ansible_host }}' \
           -var 'db_user={{ redmine_db_username }}' \
           -var 'db_name={{ redmibe_db_database }}' \
-          -var 'db_password={{ redmine_db_password }}'"
+          -var 'db_password={{ redmine_db_password }}' \
+          -var 'datadog_api_key={{ datadog_api_key }}' \
+          -var 'datadog_app_key={{ datadog_app_key }}' \
+          -var 'datadog_site={{ datadog_site }}'"
       register: plan
       ignore_errors: yes
       tags: plan
@@ -46,7 +49,10 @@
           -var 'app-vm-2_public_ip={{ hostvars.app2.ansible_host }}' \
           -var 'db_user={{ redmine_db_username }}' \
           -var 'db_name={{ redmibe_db_database }}' \
-          -var 'db_password={{ redmine_db_password }}'"
+          -var 'db_password={{ redmine_db_password }}' \
+          -var 'datadog_api_key={{ datadog_api_key }}' \
+          -var 'datadog_app_key={{ datadog_app_key }}' \
+          -var 'datadog_site={{ datadog_site }}'"
       register: apply
       ignore_errors: yes
       tags: apply

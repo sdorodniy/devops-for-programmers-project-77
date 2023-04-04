@@ -45,3 +45,17 @@ variable "db_name" {
   description = "Data base name"
   type        = string
 }
+variable "datadog_api_key" {
+  description = "DataDog API key"
+  type        = string
+  sensitive   = true
+}
+variable "datadog_app_key" {
+  description = "DataDog Application key"
+  type        = string
+  sensitive   = true
+}
+variable "datadog_site" {
+  description = "DataDog site"
+  type        = string
+}

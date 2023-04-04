@@ -1,6 +1,10 @@
 - hosts: webservers
   become: yes
   tasks:
+    - name: Stop Nginx
+      community.docker.docker_container:
+        name: nginx
+        state: absent
     - name: Create Nginx config directory
       ansible.builtin.file:
         path: /etc/redmine/nginx
