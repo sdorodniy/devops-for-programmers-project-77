@@ -9,7 +9,7 @@ resource "yandex_lb_network_load_balancer" "network-load-balancer" {
       ip_version = "ipv4"
     }
   }
-  
+
   listener {
     name        = "listener-443"
     port        = 443

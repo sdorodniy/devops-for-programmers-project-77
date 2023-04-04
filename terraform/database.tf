@@ -24,12 +24,12 @@ resource "yandex_mdb_mysql_cluster" "db-cluster" {
     create = "120m"
   }
 }
-  
+
 resource "yandex_mdb_mysql_database" "db" {
   cluster_id = yandex_mdb_mysql_cluster.db-cluster.id
   name       = var.db_name
 }
-  
+
 resource "yandex_mdb_mysql_user" "db-user" {
   cluster_id = yandex_mdb_mysql_cluster.db-cluster.id
   name       = var.db_user
