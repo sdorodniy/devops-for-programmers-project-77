@@ -8,6 +8,7 @@
 * [Terraform](https://developer.hashicorp.com/terraform/downloads?product_intent=terraform)
 * [Yandex Cloud (CLI)](https://cloud.yandex.ru/docs/cli/quickstart#install)
 
+* Configure Yndex Cloud for work with Terraform: [instruction](https://cloud.yandex.ru/docs/tutorials/infrastructure-management/terraform-quickstart)
 * Run command to generate ansible vault password file:
 ```bash
 PASSWORD=<password> make prepare-vault
